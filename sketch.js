@@ -5,7 +5,7 @@ var gameState = PLAY;
 var trex, trex_running, trex_collided;
 var ground, invisibleGround, groundImage;
 
-var cloudsGroup, cloudImage;
+var cloudsGroup, cloudImage,background_image;
 var obstaclesGroup, obstacle1, obstacle2, obstacle3, obstacle4, obstacle5, obstacle6;
 
 var score=0;
@@ -31,10 +31,11 @@ function preload(){
   
   gameOverImg = loadImage("gameOver.png");
   restartImg = loadImage("restart.png");
+  background_image=loadImage("unnamed.png")
 }
 
 function setup() {
- canvas= createCanvas(displayWidth - 20, displayHeight-100);
+ canvas= createCanvas(displayWidth - 20, displayHeight-450);
   
   trex = createSprite(50,180,20,50);
   
@@ -70,7 +71,8 @@ function setup() {
 
 function draw() {
   //trex.debug = true;
-  background(255);
+  background(225);
+ // image(background_image,displayWidth/2,200)
   text("Score: "+ score, 500,50);
   
   if (gameState===PLAY){
@@ -119,7 +121,7 @@ function draw() {
   }
   
   camera.position.x=displayWidth/2;
-  camera.position.y=trex.y;
+  camera.position.y=ground.y;
   drawSprites();
 }
 
