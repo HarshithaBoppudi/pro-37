@@ -71,7 +71,7 @@ function setup() {
 
 function draw() {
   //trex.debug = true;
-  background(225);
+  background(background_image);
  // image(background_image,displayWidth/2,200)
   text("Score: "+ score, 500,50);
   
